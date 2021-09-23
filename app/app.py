@@ -15,3 +15,4 @@ app.include_router(c.router)
 
 # run with command: 
 #    uvicorn app:app --reload and test with postman or similar 
+#   windows: python -m uvicorn app:app --reload
