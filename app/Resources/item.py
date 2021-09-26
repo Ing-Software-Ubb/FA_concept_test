@@ -3,7 +3,7 @@ from fastapi import APIRouter,Depends
 from models.item import Item
 from schemes.item import ItemScheme
 from sqlalchemy.orm import Session
-from app import get_db
+from bd import get_db
 router = APIRouter()  
 
 @router.get("/a")
