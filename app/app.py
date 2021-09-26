@@ -1,17 +1,24 @@
 from fastapi import FastAPI
+from bd import SessionLocal, engine,Base
+from Resources import a
 
-from Resources import a,b,c
-
+#ojo piojo ACÁ
+Base.metadata.create_all(bind=engine)
 
 # incializamos la app 
 app = FastAPI() 
 # Añadimos los recursos o rutas que se requieren
 app.include_router(a.router)
-app.include_router(b.router)
-app.include_router(c.router)
  
  # Acá deberia implementar la conexión a la base de datos
 
+# Dependency
+def get_db():
+    try:
+        db = SessionLocal()
+        yield db
+    finally:
+        db.close()
 
 # run with command: 
 #    uvicorn app:app --reload and test with postman or similar 
