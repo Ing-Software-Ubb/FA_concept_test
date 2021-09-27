@@ -7,4 +7,4 @@ class Item(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     nombre = Column(String(100),nullable=False)
-    existe = Column(Boolean)
+    existe = Column(Boolean, default=True)

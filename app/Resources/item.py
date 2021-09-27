@@ -49,3 +49,9 @@ def del_item(id, db: Session = Depends(get_db)):
     delete_item(db, id)
     return {"message:" "Delete complete"
     }
+
+@router.put("/items/update/{id}/{newname}")
+def upt_item_name(id, newname, db: Session = Depends(get_db)):
+    update_item_name(db, id, newname)
+    return {"message:" "update complete"
+    }
