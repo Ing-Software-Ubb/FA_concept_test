@@ -14,8 +14,8 @@ app.include_router(item.router)
  # Acá deberia implementar la conexión a la base de datos
 
 # Este lo ocuparemos mas adelante para discriminar entre ambientes (prod/dev)
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+#if __name__ == "__main__":
+#    uvicorn.run(app, host="0.0.0.0", port=8000)
 
 # run with command: 
 #    uvicorn app:app --reload and test with postman or similar 
