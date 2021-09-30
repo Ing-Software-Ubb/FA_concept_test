@@ -35,12 +35,8 @@ def get_ite(id, db: Session = Depends(get_db)):
     }
 
 @router.post("/items/insert/{id}/{nombre}/{existe}")
-def ins_item(id, nombre, existe, db: Session = Depends(get_db)):
-    if existe == 'f':
-        bool = False
-    if existe == 'v':
-        bool == True
-    insert_item(db, id, nombre, bool)
+def ins_item(id, nombre, existe:bool, db: Session = Depends(get_db)):
+    insert_item(db, id, nombre, existe)
     return {"message:" "Complete"
     }
 
