@@ -35,9 +35,11 @@ def get_ite(id, db: Session = Depends(get_db)):
     }
 
 @router.post("/items/insert/{id}/{nombre}/{existe}")
-def ins_item(id, nombre, existe:bool, db: Session = Depends(get_db)):
-    insert_item(db, id, nombre, existe)
-    return {"message:" "Complete"
+def ins_item(new_item :ItemScheme, db: Session = Depends(get_db)):
+
+    insert_item(db, new_item.id, new_item.nombre, new_item.existe)
+   
+    return {"message:" f"Complete, insertado= id:{new_item.id},nombre:{new_item.nombre}"
     }
 
 @router.delete("/items/delete/{id}")
