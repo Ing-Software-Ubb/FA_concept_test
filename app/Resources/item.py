@@ -34,7 +34,7 @@ def get_ite(id, db: Session = Depends(get_db)):
         "exist": item.existe
     }
 
-@router.post("/items/insert/{id}/{nombre}/{existe}")
+@router.post("/items/insert")
 def ins_item(new_item :ItemScheme, db: Session = Depends(get_db)):
 
     insert_item(db, new_item.id, new_item.nombre, new_item.existe)
